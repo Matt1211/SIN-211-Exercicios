@@ -78,3 +78,16 @@ int insere_posicao_especifica(ListaEstatica* ptrLista, int posicao, Musica music
 
     return 0;
 }
+
+int remove_elemento(ListaEstatica* ptrLista, int posicao){
+
+    if(lista_vazia(ptrLista)){
+        printf("Erro! A lista se encontra vazia!\n");
+        return -1;
+    }
+
+    if(posicao < 0 || posicao > ptrLista->topoLista){
+        printf("Erro! Posicao desejada para insercao eh invalida!\n");
+        return -1;
+    }
+}
