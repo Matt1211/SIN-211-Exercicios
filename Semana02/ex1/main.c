@@ -36,9 +36,9 @@ int main()
 
             printf("Adicionando Musica %d...\n", qtd_Musicas);
             printf("Nome da musica %d: ", qtd_Musicas);
-            scanf("%[^\n]%*c", novaMusica.nomeMusica);
+            scanf(" %[^\n]%*c", novaMusica.nomeMusica);
             printf("Nome do cantor da musica %d: ", qtd_Musicas);
-            scanf("%[^\n]%*c", novaMusica.cantorMusica);
+            scanf(" %[^\n]%*c", novaMusica.cantorMusica);
             printf("Duracao da musica %d em segundos: ", qtd_Musicas);
             scanf("%d", &novaMusica.duracaoMusica);
 
@@ -48,7 +48,7 @@ int main()
         case 2:
             printf("Pesquisando Musicas...\n");
             printf("Nome da musica a ser pesquisada: ");
-            scanf("%[^\n]%*c", busca);
+            scanf(" %[^\n]%*c", busca);
             resultadoPesquisa = pesquisa_musica(ptrPlaylist, busca);
 
             if (resultadoPesquisa != -1)

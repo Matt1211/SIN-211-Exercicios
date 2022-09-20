@@ -124,11 +124,6 @@ int insere_inicio(ListaEstatica *ptrLista, Musica musica)
         return -1;
     }
 
-    if (lista_vazia(ptrLista)){
-        printf("Erro - Lista nao inicializada!\n");
-        return -1;
-    }
-
     ptrLista->topoLista++;
 
     for (int i = 0; i < ptrLista->topoLista; i++)
