@@ -90,7 +90,7 @@ int insere_posicao_especifica(ListaEstatica *ptrLista, int posicao, Musica music
     return 0;
 }
 
-int remove_elemento(ListaEstatica *ptrLista, int posicao)
+int remove_musica(ListaEstatica *ptrLista, int posicao)
 {
 
     if (lista_vazia(ptrLista))
@@ -153,7 +153,7 @@ int pesquisa_musica(ListaEstatica* ptrLista, char nomeMusica[92]){
     for (int i = 0; i < ptrLista->topoLista+1; i++)
     {
         if(strcmp(nomeMusica, ptrLista->playlist[i].nomeMusica)){
-            return i;
+            return i+1;
         }
     }
     

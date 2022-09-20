@@ -4,7 +4,7 @@ int main()
 {
     int opcao = 0;
     Musica novaMusica;
-    int qtd_Musicas = 1;
+    int qtd_Musicas = 1, resultadoPesquisa = -1, posicaoRemocao;
     char busca[92];
 
     ListaEstatica *ptrPlaylist;
@@ -43,14 +43,30 @@ int main()
             scanf("%d", &novaMusica.duracaoMusica);
 
             insere_inicio(ptrPlaylist, novaMusica);
-        break;
+            break;
 
         case 2:
             printf("Pesquisando Musicas...\n");
-        break;
+            printf("Nome da musica a ser pesquisada: ");
+            scanf("%[^\n]%*c", busca);
+            resultadoPesquisa = pesquisa_musica(ptrPlaylist, busca);
+
+            if (resultadoPesquisa != -1)
+                printf("A musica pesquisada foi encontrada na posicao %d!\n", resultadoPesquisa);
+
+            break;
 
         case 3:
-        break;
+            printf("Removendo Musica...\n");
+            printf("Escolha a posicao para remover da lista uma musica. Posicao: ");
+            scanf("%d", &posicaoRemocao);
+
+            if (remove_musica(ptrPlaylist, posicaoRemocao) == 0)
+            {
+                printf("A remocao foi um sucesso!\n");
+            }
+
+            break;
 
         default:
             opcao = 4;
