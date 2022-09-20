@@ -147,7 +147,7 @@ int pesquisa_musica(ListaEstatica* ptrLista, char nomeMusica[92]){
 
     for (int i = 0; i < ptrLista->topoLista+1; i++)
     {
-        if(strcmp(nomeMusica, ptrLista->playlist[i].nomeMusica)){
+        if(strcmp(nomeMusica, ptrLista->playlist[i].nomeMusica) == 0){
             return i+1;
         }
     }
