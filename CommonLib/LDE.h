@@ -56,3 +56,31 @@ void inserir_inicio(No **lista, int elemento)
     printf("\nFalha na alocacao do no\n");
     exit(1);
 }
+
+void inserir_fim(No **lista, int elemento)
+{
+    No *novo;
+    No *aux;
+    novo = AlocarNo();
+
+    if (novo != NULL)
+    {
+        novo->info = elemento;
+        novo->esq = NULL;
+        novo->dir = NULL;
+        if (is_lista_vazia(*lista))
+        {
+            *lista = novo;
+        }
+        else
+        {
+            aux = *lista;
+            while (aux->dir != NULL)
+            {
+                aux = aux->dir;
+            }
+            aux->dir = novo;
+            novo->esq = aux;
+        }
+    }
+}
