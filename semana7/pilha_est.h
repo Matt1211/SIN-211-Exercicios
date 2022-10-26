@@ -43,9 +43,11 @@ void push(Pilha *ptrPilha, float elemento)
 
     (ptrPilha->topo)++;
     ptrPilha->items[ptrPilha->topo] = elemento;
+
+    printf("Elemento inserido!\n");
 }
 
-float pop(Pilha *ptrPilha)
+void pop(Pilha *ptrPilha)
 {
     float to_be_removed;
 
@@ -58,7 +60,7 @@ float pop(Pilha *ptrPilha)
     to_be_removed = ptrPilha->items[ptrPilha->topo];
     (ptrPilha->topo)--;
 
-    return to_be_removed;
+    printf("Elemento removido com sucesso!\n");
 }
 
 float stacktop(Pilha *ptrPilha)
@@ -70,4 +72,17 @@ float stacktop(Pilha *ptrPilha)
     }
 
     return ptrPilha->items[ptrPilha->topo];
+}
+
+
+void exibeElementos(Pilha *ptrPilha){
+    if(isPilhaVazia(ptrPilha)){
+        printf("Pilha vazia\n");
+        exit(1);
+    }
+    for (int i = 0; i < ptrPilha->topo; i++)
+    {
+        printf("%f\n", ptrPilha->items[i]);
+    }
+    
 }
